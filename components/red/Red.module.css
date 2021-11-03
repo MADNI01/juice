@@ -1,0 +1,275 @@
+.red {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background1,
+.background2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -2;
+}
+.background2 {
+  z-index: 0;
+}
+.arrows {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 99;
+}
+.arrows.active {
+  pointer-events: none;
+}
+.arrows svg {
+  height: 36px;
+  width: 36px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.arrows svg:hover {
+  background-color: white;
+  color: black;
+}
+.container {
+  margin: 0 auto;
+}
+
+/* Small */
+/* @media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+} */
+
+/* Medium */
+/* @media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+} */
+/* Large */
+/* @media (min-width: 1200px) {
+  .container {
+    width: 1171px;
+  }
+} */
+.container .nav {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 99;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.container .nav h1 {
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  font-family: "Sacramento", cursive;
+  font-size: 24px;
+}
+.name {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  color: white;
+  font-size: 42px;
+
+  transform: translateX(-50%);
+  text-align: center;
+}
+.backtext {
+  font-size: 150px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+}
+.dots {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 99;
+}
+.dots.active{
+  pointer-events: none;
+}
+.dots div {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ffffff26;
+  cursor: pointer;
+}
+.dots div:hover{
+  background-color: white;
+}
+.dots div.active {
+  background-color: white;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.backtext h2:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: -160px;
+
+}
+.backtext h2:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  right: -160px;
+
+}
+.main .shadow {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: rgb(255 255 255 / 44%) 0px 14px 100px 120px;
+}
+.main .materials {
+  height: 100vh;
+}
+.main .materials .fruit {
+  position: absolute;
+  height: 100px;
+  z-index: 1;
+}
+.main .materials .fruit img {
+  height: 100%;
+}
+
+.main .materials .fruit:nth-child(1) {
+  top: 40%;
+  left: 5%;
+  animation: fruit 10s 0.1s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(1) img {
+  transform: scale(1.3);
+}
+.main .materials .fruit:nth-child(2) {
+  top: 5%;
+  left: 5%;
+  animation: fruit1 10s 0.2s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(2) img {
+  transform: rotate(60deg);
+}
+
+.main .materials .fruit:nth-child(3) {
+  top: 16%;
+  right: 68%;
+  animation: fruit 10s 1s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(3) img {
+  filter: blur(2px);
+}
+.main .materials .fruit:nth-child(4) {
+  top: 20%;
+  right: 30%;
+  animation: fruit 10s 0.2s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(4) img {
+  transform: scale(1.3);
+}
+.main .materials .fruit:nth-child(5) {
+  top: 60%;
+  right: 15%;
+  animation: fruit1 10s 0.8s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(5) img {
+  transform: rotate(60deg);
+}
+
+.main .materials .fruit:nth-child(6) {
+  top: 70%;
+  right: 78%;
+  animation-delay: 0.5s;
+  animation: fruit 10s 0.2s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(6) img {
+  transform: rotate(140deg);
+  filter: blur(2px);
+}
+
+.main .materials .fruit:nth-child(7) {
+  top: 65%;
+  right: 54%;
+  animation: fruit1 10s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(7) img {
+  transform: rotate(180deg);
+  transform: scale(1.3);
+}
+.main .materials .fruit:nth-child(8) {
+  top: 16%;
+  right: 7%;
+  animation: fruit1 10s linear infinite alternate;
+}
+.main .materials .fruit:nth-child(8) img {
+  transform: rotate(60deg);
+  filter: blur(2px);
+}
+.main .materials .fruit:nth-child(9) {
+  top: 85%;
+  right: 25%;
+  animation: fruit 5s 0.1s linear infinite alternate;
+}
+@keyframes fruit {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-10px)rotate(10deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(0)rotate(0);
+  }
+}
+@keyframes fruit1 {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.main .juice {
+  height: 450px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: juice 10s linear infinite alternate;
+}
+.main .juice img {
+  height: 100%;
+}
+

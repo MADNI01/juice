@@ -1,0 +1,27 @@
+.social {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 99;
+  transform: translateY(-50%);
+}
+.social svg {
+  height: 22px;
+  width: 22px;
+  fill: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+.social svg:hover{
+  fill: white;
+}
+.social svg:nth-child(2) {
+  border-radius: 50%;
+}
+.social svg:hover {
+  transform: scale(1.2);
+}
