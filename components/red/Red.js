@@ -7,9 +7,9 @@ const Data = [
   {
     background: "radial-gradient(rgb(167, 44, 70), rgb(59, 18, 28))",
     juice: "red.png",
-    fruit1: "strawberry.png",
-    fruit2: "strawberry2.png",
-    fruit3: "strawberry3.png",
+    fruit1: "Strawberry.png",
+    fruit2: "Strawberry2.png",
+    fruit3: "Strawberry3.png",
     name: "Date A Nut",
   },
   {
