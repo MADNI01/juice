@@ -2,53 +2,54 @@ import classes from "./Red.module.css";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowDownShort, BsArrowUpShort } from "react-icons/bs";
-import Social from '../social/Social'
+import Social from "../social/Social";
+import Image from "next/image";
 const Data = [
   {
     background: "radial-gradient(rgb(167, 44, 70), rgb(59, 18, 28))",
-    juice: "red.webp",
-    fruit1: "Strawberry.webp",
-    fruit2: "Strawberry2.webp",
-    fruit3: "Strawberry3.webp",
+    juice: "/red.webp",
+    fruit1: "/Strawberry.webp",
+    fruit2: "/Strawberry2.webp",
+    fruit3: "/Strawberry3.webp",
     name: "Date A Nut",
   },
   {
     background: "radial-gradient(#563057, rgb(59, 18, 28))",
-    juice: "purple.webp",
-    fruit1: "blueberry.webp",
-    fruit2: "blueberry2.webp",
-    fruit3: "blueberry.webp",
+    juice: "/purple.webp",
+    fruit1: "/blueberry.webp",
+    fruit2: "/blueberry2.webp",
+    fruit3: "/blueberry.webp",
     name: "Berrified",
   },
   {
     background: "radial-gradient(#65a648, rgb(59, 18, 28))",
-    juice: "green.webp",
-    fruit1: "nane.webp",
-    fruit2: "nane2.webp",
-    fruit3: "kiki.webp",
+    juice: "/green.webp",
+    fruit1: "/nane.webp",
+    fruit2: "/nane2.webp",
+    fruit3: "/kiki.webp",
     name: "The Tummy Tuck",
   },
   {
     background: "radial-gradient(#4a2711, rgb(59, 18, 28))",
-    juice: "brown.webp",
-    fruit1: "nut.webp",
-    fruit2: "nut2.webp",
-    fruit3: "nut.webp",
+    juice: "/brown.webp",
+    fruit1: "/nut.webp",
+    fruit2: "/nut2.webp",
+    fruit3: "/nut.webp",
     name: "Choco Loco",
   },
   {
     background: "radial-gradient(#f18f38, rgb(59, 18, 28))",
-    juice: "yellow.webp",
-    fruit1: "peach.webp",
-    fruit2: "peach2.webp",
-    fruit3: "peach3.webp",
+    juice: "/yellow.webp",
+    fruit1: "/peach.webp",
+    fruit2: "/peach2.webp",
+    fruit3: "/peach3.webp",
     name: "Spicy Mango Tango",
   },
 ];
 const Red = () => {
   const [counter, setCounter] = useState(0);
   const [theme, setTheme] = useState(Data[counter]);
-  const [disable,setDisable] = useState(false)
+  const [disable, setDisable] = useState(false);
   const fruitRef = useRef(null);
   const juiceRef = useRef(null);
   const bgRef = useRef(null);
@@ -56,9 +57,8 @@ const Red = () => {
   const backTextRef1 = useRef(null);
   const backTextRef2 = useRef(null);
 
-
   const nextBgHandler = (e) => {
-    setDisable(true)
+    setDisable(true);
     setCounter(e);
     gsap.from(bgRef.current, 1, { y: "-105%" });
     gsap.to(bgRef.current, 1.5, {
@@ -111,12 +111,12 @@ const Red = () => {
           gsap.set(juiceRef.current, { clearProps: "all" });
         },
       });
-      setDisable(false)
+      setDisable(false);
     }, 1100);
   };
 
   const prevBgHandler = (e) => {
-    setDisable(true)
+    setDisable(true);
     setCounter(e);
     gsap.from(bgRef.current, 1, { y: "105%" });
     gsap.to(bgRef.current, 1.5, {
@@ -169,7 +169,7 @@ const Red = () => {
           gsap.set(juiceRef.current, { clearProps: "all" });
         },
       });
-      setDisable(false)
+      setDisable(false);
     }, 1100);
   };
   return (
@@ -209,8 +209,14 @@ const Red = () => {
           <h2 ref={backTextRef2}>JUICE</h2>
         </div>
         <div className={`${classes.dots} ${disable && classes.active}`}>
-          {Data.map((i,n)=>(
-            <div key={i} onClick={n > counter ? ()=>nextBgHandler(n):()=>prevBgHandler(n)} className={n==counter ? classes.active : null}></div>
+          {Data.map((i, n) => (
+            <div
+              key={i}
+              onClick={
+                n > counter ? () => nextBgHandler(n) : () => prevBgHandler(n)
+              }
+              className={n == counter ? classes.active : null}
+            ></div>
           ))}
         </div>
         <div className={classes.main}>
@@ -246,7 +252,7 @@ const Red = () => {
           </div>
           <h2>Fresh juice</h2>
           <div className={classes.juice} ref={juiceRef}>
-            <img src={theme?.juice} />
+            <Image src={theme?.juice} width={155} height={450} />
           </div>
         </div>
       </div>
