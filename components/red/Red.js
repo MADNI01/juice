@@ -7,7 +7,7 @@ import Image from "next/image";
 const Data = [
   {
     background: "radial-gradient(rgb(167, 44, 70), rgb(59, 18, 28))",
-    juice: "red-min.png",
+    juice: "red.webp",
     fruit1: "Strawberry.webp",
     fruit2: "Strawberry2.webp",
     fruit3: "Strawberry3.webp",
@@ -15,7 +15,7 @@ const Data = [
   },
   {
     background: "radial-gradient(#563057, rgb(59, 18, 28))",
-    juice: "purple-min.png",
+    juice: "purple.webp",
     fruit1: "blueberry.webp",
     fruit2: "blueberry2.webp",
     fruit3: "blueberry.webp",
@@ -82,11 +82,13 @@ const Red = () => {
     });
     gsap.to(fruitRef.current, 1.3, {
       y: "-110%",
+      opacity:0,
       ease: "Expo.easeInOut",
       delay: 0.1,
     });
     gsap.to(juiceRef.current, 1.5, {
       y: 800,
+      opacity:0,
       ease: "Expo.easeInOut",
       delay: 0.1,
     });
@@ -101,11 +103,12 @@ const Red = () => {
       gsap.to(nameRef.current, 1.7, { y: 0, ease: "Expo.easeOut" });
       // Fruit Ref
       gsap.from(fruitRef.current, 1, { y: "100%" });
-      gsap.to(fruitRef.current, 1.5, { y: 0, ease: "Expo.easeOut" });
+      gsap.to(fruitRef.current, 1.5, { y: 0,opacity:1, ease: "Expo.easeOut" });
       // juice Ref
       gsap.from(juiceRef.current, 1, { y: "-130%" });
       gsap.to(juiceRef.current, 1.5, {
         y: 0,
+        opacity:1,
         ease: "Expo.easeOut",
         onComplete: function () {
           gsap.set(juiceRef.current, { clearProps: "all" });
@@ -136,11 +139,13 @@ const Red = () => {
     gsap.to(backTextRef2.current, 1.3, { x: 800, ease: "Expo.easeInOut" });
     gsap.to(fruitRef.current, 1.3, {
       y: "-100%",
+      opacity:0,
       ease: "Expo.easeInOut",
       delay: 0.1,
     });
     gsap.to(juiceRef.current, 1.5, {
       y: 800,
+      opacity:0,
       ease: "Expo.easeInOut",
       delay: 0.1,
     });
@@ -159,11 +164,12 @@ const Red = () => {
       gsap.to(nameRef.current, 1.3, { y: 0, ease: "Expo.easeOut" });
       // Fruit Ref
       gsap.from(fruitRef.current, 1, { y: "100%" });
-      gsap.to(fruitRef.current, 1.5, { y: 0, ease: "Expo.easeOut" });
+      gsap.to(fruitRef.current, 1.5, { y: 0,opacity:1, ease: "Expo.easeOut" });
       // juice Ref
       gsap.from(juiceRef.current, 1, { y: "-130%" });
       gsap.to(juiceRef.current, 1.5, {
         y: 0,
+        opacity:1,
         ease: "Expo.easeOut",
         onComplete: function () {
           gsap.set(juiceRef.current, { clearProps: "all" });
