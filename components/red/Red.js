@@ -2,8 +2,8 @@ import classes from "./Red.module.css";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowDownShort, BsArrowUpShort } from "react-icons/bs";
-import Social from '../social/Social'
-import Image from 'next/image'
+import Social from "../social/Social";
+import Image from "next/image";
 const Data = [
   {
     background: "radial-gradient(rgb(167, 44, 70), rgb(59, 18, 28))",
@@ -49,7 +49,7 @@ const Data = [
 const Red = () => {
   const [counter, setCounter] = useState(0);
   const [theme, setTheme] = useState(Data[counter]);
-  const [disable,setDisable] = useState(false)
+  const [disable, setDisable] = useState(false);
   const fruitRef = useRef(null);
   const juiceRef = useRef(null);
   const bgRef = useRef(null);
@@ -57,9 +57,8 @@ const Red = () => {
   const backTextRef1 = useRef(null);
   const backTextRef2 = useRef(null);
 
-
   const nextBgHandler = (e) => {
-    setDisable(true)
+    setDisable(true);
     setCounter(e);
     gsap.from(bgRef.current, 1, { y: "-105%" });
     gsap.to(bgRef.current, 1.5, {
@@ -72,6 +71,7 @@ const Red = () => {
     gsap.to(bgRef.current, { zIndex: 2 });
     setTimeout(() => {
       gsap.to(bgRef.current, { zIndex: -1 });
+      setTheme(Data[e]);
     }, 800);
     gsap.to(backTextRef1.current, 1.3, { x: 1800, ease: "Expo.easeInOut" });
     gsap.to(backTextRef2.current, 1.3, { x: -1800, ease: "Expo.easeInOut" });
@@ -91,7 +91,6 @@ const Red = () => {
       delay: 0.1,
     });
     setTimeout(() => {
-      setTheme(Data[e]);
       // back Name ref
       gsap.from(backTextRef1.current, 1.3, { x: "-160%", ease: "Expo.easeIn" });
       gsap.to(backTextRef1.current, 1.3, { x: 0, ease: "Expo.easeOut" });
@@ -112,12 +111,12 @@ const Red = () => {
           gsap.set(juiceRef.current, { clearProps: "all" });
         },
       });
-      setDisable(false)
+      setDisable(false);
     }, 1100);
   };
 
   const prevBgHandler = (e) => {
-    setDisable(true)
+    setDisable(true);
     setCounter(e);
     gsap.from(bgRef.current, 1, { y: "105%" });
     gsap.to(bgRef.current, 1.5, {
@@ -147,9 +146,9 @@ const Red = () => {
     });
     setTimeout(() => {
       gsap.to(bgRef.current, { zIndex: -1 });
+      setTheme(Data[e]);
     }, 800);
     setTimeout(() => {
-      setTheme(Data[e]);
       // back Name ref
       gsap.from(backTextRef1.current, 1.3, { x: "160%", ease: "Expo.easeIn" });
       gsap.to(backTextRef1.current, 1.3, { x: 0, ease: "Expo.easeOut" });
@@ -170,7 +169,7 @@ const Red = () => {
           gsap.set(juiceRef.current, { clearProps: "all" });
         },
       });
-      setDisable(false)
+      setDisable(false);
     }, 1100);
   };
   return (
@@ -210,8 +209,14 @@ const Red = () => {
           <h2 ref={backTextRef2}>JUICE</h2>
         </div>
         <div className={`${classes.dots} ${disable && classes.active}`}>
-          {Data.map((i,n)=>(
-            <div key={i} onClick={n > counter ? ()=>nextBgHandler(n):()=>prevBgHandler(n)} className={n==counter ? classes.active : null}></div>
+          {Data.map((i, n) => (
+            <div
+              key={i}
+              onClick={
+                n > counter ? () => nextBgHandler(n) : () => prevBgHandler(n)
+              }
+              className={n == counter ? classes.active : null}
+            ></div>
           ))}
         </div>
         <div className={classes.main}>
