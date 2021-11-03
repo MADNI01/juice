@@ -7,7 +7,7 @@ import Image from 'next/image'
 const Data = [
   {
     background: "radial-gradient(rgb(167, 44, 70), rgb(59, 18, 28))",
-    juice: "red.webp",
+    juice: "red-min.png",
     fruit1: "Strawberry.webp",
     fruit2: "Strawberry2.webp",
     fruit3: "Strawberry3.webp",
@@ -15,7 +15,7 @@ const Data = [
   },
   {
     background: "radial-gradient(#563057, rgb(59, 18, 28))",
-    juice: "purple.webp",
+    juice: "purple-min.png",
     fruit1: "blueberry.webp",
     fruit2: "blueberry2.webp",
     fruit3: "blueberry.webp",
