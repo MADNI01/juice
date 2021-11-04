@@ -66,31 +66,24 @@ const Red = () => {
 
 
   useEffect(()=>{
-    gsap.from(dotsRef.current,1,{x:100})
-    gsap.to(dotsRef.current,3,{x:0,ease: "Expo.easeOut"})
-    gsap.from(arrowsRef.current,1,{y:100})
-    gsap.to(arrowsRef.current,5,{y:0,ease: "Expo.easeOut"})
+    gsap.from(dotsRef.current,3,{x:100,ease: "Expo.easeOut"})
+
+    gsap.from(arrowsRef.current,5,{y:100,ease: "Expo.easeOut"})
+   
     // back Name ref
-    gsap.from(backTextRef1.current, 1.3, { x: "-160%", ease: "Expo.easeIn" });
-    gsap.to(backTextRef1.current, 3, { x: 0, ease: "Expo.easeOut" });
-    gsap.from(backTextRef2.current, 1.3, { x: "160%", ease: "Expo.easeIn" });
-    gsap.to(backTextRef2.current, 3, { x: 0, ease: "Expo.easeOut" });
+    gsap.from(backTextRef1.current, 3, { x: "-160%", ease: "Expo.easeOut" });
+
+    gsap.from(backTextRef2.current, 3, { x: "160%", ease: "Expo.easeOut" });
+
     // name Ref
-    gsap.from(nameRef.current, 1.3, { y: "700%", ease: "Expo.easeIn" });
-    gsap.to(nameRef.current, 3, { y: 0, ease: "Expo.easeOut" });
+    gsap.from(nameRef.current, 3, { y: "700%", ease: "Expo.easeOut" });
+
     // Fruit Ref
-    gsap.from(fruitRef.current, 1, { y: "-100%" });
-    gsap.to(fruitRef.current, 3, { y: 0, ease: "Expo.easeOut" });
+    gsap.from(fruitRef.current, 4, { y: "-100%", ease: "Expo.easeOut" });
+  
     // juice Ref
-    gsap.from(juiceRef.current, 1, { y: "140%" });
-    gsap.to(juiceRef.current, 3, {
-      y: 0,
-      x:0,
-      ease: "Expo.easeOut",
-      onComplete: function () {
-        gsap.set(juiceRef.current, { clearProps: "all" });
-      },
-    });
+    gsap.from(juiceRef.current, 3, { y: "140%",ease: "Expo.easeOut", });
+
   },[])
   const nextBgHandler = (e) => {
     setDisable(true);
