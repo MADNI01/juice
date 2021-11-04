@@ -265,7 +265,7 @@ const Red = () => {
         </div>
         <div className={classes.backtext}>
           <h2 ref={backTextRef1}>FRESH</h2>
-          <h2 ref={backTextRef2}>SMOOTHIE</h2>
+          <h2 ref={backTextRef2}>JUICE</h2>
         </div>
         <div className={`${classes.dots} ${disable && classes.active}`} ref={dotsRef}>
           {Data.map((i, n) => (
