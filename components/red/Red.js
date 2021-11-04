@@ -217,7 +217,7 @@ const Red = () => {
         <div className={`${classes.dots} ${disable && classes.active}`}>
           {Data.map((i, n) => (
             <div
-              key={i}
+              key={n}
               onClick={
                 n > counter ? () => nextBgHandler(n) : () => prevBgHandler(n)
               }
@@ -256,7 +256,6 @@ const Red = () => {
               <img src={theme?.fruit3} />
             </div>
           </div>
-          <h2>Fresh juice</h2>
           <div className={classes.juice} ref={juiceRef}>
             <img src={theme?.juice} />
           </div>

@@ -1,5 +1,5 @@
 .red {
-  height: 100vh;
+  height: -webkit-fill-available;
   position: relative;
   overflow: hidden;
 }
@@ -104,6 +104,9 @@
 @media(max-width:385px){
   .name{
     font-size: 18px;
+  }
+  .backtext{
+    font-size: 90px;
   }
 }
 .dots {
