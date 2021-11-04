@@ -60,7 +60,38 @@ const Red = () => {
   const nameRef = useRef(null);
   const backTextRef1 = useRef(null);
   const backTextRef2 = useRef(null);
+  const dotsRef = useRef(null);
+  const arrowsRef = useRef(null);
+  
 
+
+  useEffect(()=>{
+    gsap.from(dotsRef.current,1,{x:100})
+    gsap.to(dotsRef.current,3,{x:0,ease: "Expo.easeOut"})
+    gsap.from(arrowsRef.current,1,{y:100})
+    gsap.to(arrowsRef.current,5,{y:0,ease: "Expo.easeOut"})
+    // back Name ref
+    gsap.from(backTextRef1.current, 1.3, { x: "-160%", ease: "Expo.easeIn" });
+    gsap.to(backTextRef1.current, 3, { x: 0, ease: "Expo.easeOut" });
+    gsap.from(backTextRef2.current, 1.3, { x: "160%", ease: "Expo.easeIn" });
+    gsap.to(backTextRef2.current, 3, { x: 0, ease: "Expo.easeOut" });
+    // name Ref
+    gsap.from(nameRef.current, 1.3, { y: "700%", ease: "Expo.easeIn" });
+    gsap.to(nameRef.current, 3, { y: 0, ease: "Expo.easeOut" });
+    // Fruit Ref
+    gsap.from(fruitRef.current, 1, { y: "-100%" });
+    gsap.to(fruitRef.current, 3, { y: 0,opacity:1, ease: "Expo.easeOut" });
+    // juice Ref
+    gsap.from(juiceRef.current, 1, { y: "140%" });
+    gsap.to(juiceRef.current, 3, {
+      y: 0,
+      opacity:1,
+      ease: "Expo.easeOut",
+      onComplete: function () {
+        gsap.set(juiceRef.current, { clearProps: "all" });
+      },
+    });
+  },[])
   const nextBgHandler = (e) => {
     setDisable(true);
     setCounter(e);
@@ -201,7 +232,7 @@ const Red = () => {
     /* get window dimensions */
   return (
     <div className={classes.red} style={{height:windowSize.height}}>
-      <Social />
+      <Social/>
       <div
         className={classes.background1}
         style={{ background: theme?.background }}
@@ -212,8 +243,9 @@ const Red = () => {
         ref={bgRef}
       ></div>
       <div className={classes.container}>
-        <div className={`${classes.arrows} ${disable && classes.active}`}>
+        <div className={`${classes.arrows} ${disable && classes.active}`} ref={arrowsRef}>
           <BsArrowDownShort
+          
             onClick={() => nextBgHandler(counter == 4 ? 0 : counter + 1)}
             style={{}}
           >
@@ -233,9 +265,9 @@ const Red = () => {
         </div>
         <div className={classes.backtext}>
           <h2 ref={backTextRef1}>FRESH</h2>
-          <h2 ref={backTextRef2}>JUICE</h2>
+          <h2 ref={backTextRef2}>SMOOTHIE</h2>
         </div>
-        <div className={`${classes.dots} ${disable && classes.active}`}>
+        <div className={`${classes.dots} ${disable && classes.active}`} ref={dotsRef}>
           {Data.map((i, n) => (
             <div
               key={n}
