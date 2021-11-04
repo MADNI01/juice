@@ -84,7 +84,7 @@
   left: 50%;
   color: white;
   font-size: 42px;
-
+  width: max-content;
   transform: translateX(-50%);
   text-align: center;
 }
@@ -92,6 +92,19 @@
   font-size: 150px;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+}
+@media(max-width:600px){
+  .name{
+    font-size: 26px;
+  }
+  .backtext{
+    font-size: 120px;
+  }
+}
+@media(max-width:385px){
+  .name{
+    font-size: 18px;
+  }
 }
 .dots {
   position: absolute;
@@ -112,6 +125,16 @@
   border-radius: 50%;
   background-color: #ffffff26;
   cursor: pointer;
+}
+@media(max-width:385px){
+  .dots{
+    right: 20px;
+  }
+  .dots div {
+    width: 12px;
+    height: 12px;
+
+  }
 }
 .dots div:hover{
   background-color: white;
@@ -150,6 +173,21 @@
   position: absolute;
   height: 100px;
   z-index: 1;
+}
+@media(max-width:750px){
+  .main .materials .fruit {
+    height: 90px;
+  }
+}
+@media(max-width:550px){
+  .main .materials .fruit {
+    height: 70px;
+  }
+}
+@media(max-width:325px){
+  .main .materials .fruit {
+    height: 55px;
+  }
 }
 .main .materials .fruit img {
   height: 100%;
@@ -198,7 +236,7 @@
 }
 
 .main .materials .fruit:nth-child(6) {
-  top: 70%;
+  top: 80%;
   right: 78%;
   animation-delay: 0.5s;
   animation: fruit 10s 0.2s linear infinite alternate;
@@ -212,6 +250,11 @@
   top: 65%;
   right: 54%;
   animation: fruit1 10s linear infinite alternate;
+}
+@media(max-width:550px){
+  .main .materials .fruit:nth-child(7){
+    right: 63%;
+  }
 }
 .main .materials .fruit:nth-child(7) img {
   transform: rotate(180deg);
