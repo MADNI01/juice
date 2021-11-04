@@ -80,12 +80,12 @@ const Red = () => {
     gsap.to(nameRef.current, 3, { y: 0, ease: "Expo.easeOut" });
     // Fruit Ref
     gsap.from(fruitRef.current, 1, { y: "-100%" });
-    gsap.to(fruitRef.current, 3, { y: 0,opacity:1, ease: "Expo.easeOut" });
+    gsap.to(fruitRef.current, 3, { y: 0, ease: "Expo.easeOut" });
     // juice Ref
     gsap.from(juiceRef.current, 1, { y: "140%" });
     gsap.to(juiceRef.current, 3, {
       y: 0,
-      opacity:1,
+      x:0,
       ease: "Expo.easeOut",
       onComplete: function () {
         gsap.set(juiceRef.current, { clearProps: "all" });
