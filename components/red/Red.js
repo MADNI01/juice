@@ -82,7 +82,7 @@ const Red = () => {
     gsap.from(fruitRef.current, 4, { y: "-100%", ease: "Expo.easeOut" });
   
     // juice Ref
-    gsap.from(juiceRef.current, 3, { y: "140%",ease: "Expo.easeOut", });
+    gsap.from(juiceRef.current, 3, { opacity:0,ease: "Expo.easeOut", });
 
   },[])
   const nextBgHandler = (e) => {
