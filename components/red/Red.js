@@ -50,6 +50,10 @@ const Red = () => {
   const [counter, setCounter] = useState(0);
   const [theme, setTheme] = useState(Data[counter]);
   const [disable, setDisable] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
   const fruitRef = useRef(null);
   const juiceRef = useRef(null);
   const bgRef = useRef(null);
@@ -178,8 +182,25 @@ const Red = () => {
       setDisable(false);
     }, 1100);
   };
+    /* get window dimensions */
+    
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+  
+      window.addEventListener("resize", handleResize);
+  
+      handleResize();
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    /* get window dimensions */
   return (
-    <div className={classes.red}>
+    <div className={classes.red} style={{height:windowSize.height}}>
       <Social />
       <div
         className={classes.background1}
